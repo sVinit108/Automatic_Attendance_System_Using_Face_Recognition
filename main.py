@@ -1,6 +1,10 @@
+import warnings
 import pandas as pd
 from src.components.addStudent import addStudent
 from src.pipelines.UpdateAttendance import UpdateAttendance
+
+# Ignore all warnings
+warnings.filterwarnings("ignore")
 
 csv = pd.read_csv(r"data\attendance.csv")
 

@@ -3,12 +3,12 @@ import pickle
 import numpy as np
 import face_recognition
 from src.components.addAttendanceToCSV import addAttendanceToCSV
+from src.components.updateAttendaceToDB import addAttendanceToDB
 
 def UpdateAttendance():
-    with open(f'data/Encodings.pkl', 'rb') as file:
+    with open(r'data/Encodings.pkl', 'rb') as file:
         encodeListKnown = pickle.load(file)
-
-    with open(f'data/Names.pkl', 'rb') as file:
+    with open(r'data/Names.pkl', 'rb') as file:
         Names=[]
         while True:
             try:            
@@ -21,7 +21,7 @@ def UpdateAttendance():
 
     attendance_list=[]
     while True:
-        success, img = cap.read()
+        _, img = cap.read()
         imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
         imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
 
@@ -52,3 +52,4 @@ def UpdateAttendance():
 
     subject = input('Attendance for which subject?: ')
     addAttendanceToCSV(attendance_list,subject.upper())
+    addAttendanceToDB(attendance_list,subject.lower())

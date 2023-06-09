@@ -1,4 +1,8 @@
 cv2
+PIL
 numpy
 pandas
+pickle
+pymysql
+sqlalchemy
 face_recognition
