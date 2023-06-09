@@ -7,4 +7,7 @@
     - Update Attendance
     - Get Students
     - Update Students
-    
+
+Database Image:-
+    ![image](https://github.com/sVinit108/Automatic_Attendance_System_Using_Face_Recognition/assets/113916685/0f2508a3-a4af-43ac-b664-0fc54a087fee)
+
